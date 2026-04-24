@@ -6,6 +6,7 @@ export const site = {
   discord: "https://discord.gg/kgbyCEm8",
   instagram: "https://instagram.com/ladyofthestack",
   threads: "https://threads.net/@ladyofthestack",
+  moxfield: "https://moxfield.com/decks/ZsqkSdCXhU2HDF__yxDR2w",
   handle: "@ladyofthestack",
 };
 

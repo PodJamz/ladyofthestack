@@ -40,7 +40,7 @@ export default function AboutPage() {
           href={site.instagram}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center rounded-md bg-[var(--forest)] px-5 py-2.5 text-sm font-medium text-[var(--bg)] hover:bg-[var(--accent)]"
+          className="inline-flex items-center rounded-md bg-[var(--btn-bg)] px-5 py-2.5 text-sm font-medium text-[var(--btn-fg)] hover:bg-[var(--btn-bg-hover)] hover:text-[var(--btn-fg-hover)]"
         >
           Follow on Instagram
         </a>
