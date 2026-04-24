@@ -18,19 +18,30 @@ export default function DecklistsPage() {
         for the reel version of each.
       </p>
 
-      <div className="mt-10 rounded-xl border border-dashed border-[var(--border)] bg-[var(--bg-elevated)] p-10 text-center">
-        <h2 className="text-3xl text-[var(--forest)]">First decks coming soon.</h2>
+      <div className="mt-10 rounded-xl border border-[var(--border)] bg-[var(--bg-elevated)] p-10 text-center">
+        <p className="text-xs uppercase tracking-[0.25em] text-[var(--accent)] mb-3">Featured deck</p>
+        <h2 className="text-3xl text-[var(--forest)]">Live on Moxfield.</h2>
         <p className="mt-3 text-[var(--fg-muted)] max-w-xl mx-auto">
-          Moonfolk control, a Pantlaza dinos build, and a budget mono-blue tempo list are in the queue. Hop on Discord for the sneak peeks.
+          Full decklist, mana base, sideboard notes, the works. Cards click through to Scryfall, prices update live, copy the list straight into your client.
         </p>
-        <a
-          href={site.discord}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-6 inline-flex items-center rounded-md bg-[var(--forest)] px-5 py-2.5 text-sm font-medium text-[var(--bg)] hover:bg-[var(--accent)]"
-        >
-          Join the Fellowship
-        </a>
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
+          <a
+            href={site.moxfield}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center rounded-md bg-[var(--forest)] px-5 py-2.5 text-sm font-medium text-[var(--bg)] hover:bg-[var(--accent)]"
+          >
+            View the deck on Moxfield →
+          </a>
+          <a
+            href={site.discord}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center rounded-md border border-[var(--border)] bg-[var(--bg)] px-5 py-2.5 text-sm font-medium hover:border-[var(--accent)]"
+          >
+            Discuss in the Fellowship
+          </a>
+        </div>
       </div>
 
       <div className="mt-12 grid gap-6 sm:grid-cols-3">
