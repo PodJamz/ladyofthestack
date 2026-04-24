@@ -10,6 +10,10 @@
   --forest: #1f3a2b;
   --forest-deep: #14261c;
   --border: #d9cfbb;
+  --btn-bg: #1f3a2b;
+  --btn-fg: #f5f0e6;
+  --btn-bg-hover: #b87333;
+  --btn-fg-hover: #14261c;
 }
 
 .dark {
@@ -22,6 +26,10 @@
   --forest: #f5f0e6;
   --forest-deep: #ede5d3;
   --border: #2f4a3a;
+  --btn-bg: #d4a857;
+  --btn-fg: #14261c;
+  --btn-bg-hover: #f5f0e6;
+  --btn-fg-hover: #14261c;
 }
 
 @theme inline {
@@ -34,6 +42,10 @@
   --color-forest: var(--forest);
   --color-forest-deep: var(--forest-deep);
   --color-border: var(--border);
+  --color-btn-bg: var(--btn-bg);
+  --color-btn-fg: var(--btn-fg);
+  --color-btn-bg-hover: var(--btn-bg-hover);
+  --color-btn-fg-hover: var(--btn-fg-hover);
   --font-display: var(--font-cormorant);
   --font-sans: var(--font-inter);
 }

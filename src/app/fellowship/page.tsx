@@ -29,7 +29,7 @@ export default function FellowshipPage() {
           href={site.discord}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-8 inline-flex items-center rounded-md bg-[var(--forest)] px-6 py-3 text-base font-medium text-[var(--bg)] hover:bg-[var(--accent)]"
+          className="mt-8 inline-flex items-center rounded-md bg-[var(--btn-bg)] px-6 py-3 text-base font-medium text-[var(--btn-fg)] hover:bg-[var(--btn-bg-hover)] hover:text-[var(--btn-fg-hover)]"
         >
           Join the Fellowship on Discord
         </a>
