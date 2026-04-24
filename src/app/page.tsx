@@ -1,65 +1,104 @@
 import Image from "next/image";
+import Link from "next/link";
+import { site } from "@/lib/site";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <section className="relative overflow-hidden">
+        <div className="mx-auto max-w-6xl px-6 pt-12 pb-16 grid gap-10 md:grid-cols-2 md:items-center">
+          <div>
+            <p className="text-xs uppercase tracking-[0.2em] text-[var(--accent)] mb-4">
+              Welcome to the realm
+            </p>
+            <h1 className="text-5xl sm:text-6xl leading-[1.05] font-[family-name:var(--font-cormorant)] text-[var(--forest)]">
+              Lady of the Stack
+            </h1>
+            <p className="mt-5 text-lg text-[var(--fg-muted)] max-w-lg">
+              MTG content. Commander chaos. Fantasy. Community for the people who actually play the game.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href={site.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-md bg-[var(--forest)] px-5 py-2.5 text-sm font-medium text-[var(--bg)] hover:bg-[var(--accent)]"
+              >
+                Follow on Instagram
+              </a>
+              <a
+                href={site.discord}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-md border border-[var(--border)] bg-[var(--bg-elevated)] px-5 py-2.5 text-sm font-medium hover:border-[var(--accent)] hover:text-[var(--accent)]"
+              >
+                Join the Discord
+              </a>
+              <Link
+                href="/about"
+                className="inline-flex items-center rounded-md px-5 py-2.5 text-sm font-medium text-[var(--forest)] hover:text-[var(--accent)]"
+              >
+                Read about me →
+              </Link>
+            </div>
+          </div>
+          <div className="relative aspect-square w-full max-w-md mx-auto md:ml-auto">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[var(--accent-soft)] via-[var(--accent)] to-[var(--forest)] opacity-20 blur-3xl" />
+            <div className="relative rounded-full overflow-hidden ring-4 ring-[var(--accent-soft)]/40 shadow-2xl">
+              <Image
+                src="/hero.jpg"
+                alt="Lady of the Stack, MTG creator, flower crown and elf ears"
+                width={800}
+                height={800}
+                priority
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className="border-y border-[var(--border)] bg-[var(--bg-elevated)]">
+        <div className="mx-auto max-w-6xl px-6 py-14 grid gap-6 sm:grid-cols-3">
+          {[
+            {
+              title: "Commander first",
+              body: "Bracket 2/3, cEDH, budget upgrades, deck tech of the month. Lists for real tables, not just theory.",
+              href: "/decklists",
+              cta: "See the decks",
+            },
+            {
+              title: "The Fellowship",
+              body: "A Discord for people who love Magic. Chill, new-player friendly, loud at the right moments.",
+              href: "/fellowship",
+              cta: "Join the server",
+            },
+            {
+              title: "Collabs and content",
+              body: "Partnerships, reviews, sponsorships. Reach out if you are building something the community would love.",
+              href: "/contact",
+              cta: "Get in touch",
+            },
+          ].map((card) => (
+            <div key={card.title} className="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-6 flex flex-col">
+              <h3 className="text-2xl text-[var(--forest)]">{card.title}</h3>
+              <p className="text-sm text-[var(--fg-muted)] mt-2 flex-1">{card.body}</p>
+              <Link href={card.href} className="mt-4 text-sm text-[var(--accent)] hover:underline">
+                {card.cta} →
+              </Link>
+            </div>
+          ))}
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="mx-auto max-w-4xl px-6 py-16 text-center">
+        <p className="text-xs uppercase tracking-[0.2em] text-[var(--accent)] mb-3">Latest</p>
+        <h2 className="text-3xl text-[var(--forest)]">Instagram gets the attention. This is where the empire lives.</h2>
+        <p className="mt-4 text-[var(--fg-muted)]">
+          Follow <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="text-[var(--accent)] hover:underline">{site.handle}</a> for reels and deck drops. Join{" "}
+          <a href={site.discord} target="_blank" rel="noopener noreferrer" className="text-[var(--accent)] hover:underline">the Fellowship on Discord</a> for the real conversations.
+        </p>
+      </section>
+    </>
   );
 }

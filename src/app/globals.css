@@ -1,26 +1,77 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #f5f0e6;
+  --bg-elevated: #ede5d3;
+  --fg: #1a1a1a;
+  --fg-muted: #4a4a4a;
+  --accent: #b87333;
+  --accent-soft: #d4a857;
+  --forest: #1f3a2b;
+  --forest-deep: #14261c;
+  --border: #d9cfbb;
+}
+
+.dark {
+  --bg: #14261c;
+  --bg-elevated: #1f3a2b;
+  --fg: #f5f0e6;
+  --fg-muted: #c9bfa9;
+  --accent: #d4a857;
+  --accent-soft: #b87333;
+  --forest: #f5f0e6;
+  --forest-deep: #ede5d3;
+  --border: #2f4a3a;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-forest: var(--forest);
+  --color-forest-deep: var(--forest-deep);
+  --color-border: var(--border);
+  --font-display: var(--font-cormorant);
+  --font-sans: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+h1, h2, h3, h4 {
+  font-family: var(--font-cormorant), Georgia, serif;
+  letter-spacing: -0.01em;
+}
+
+.adhd-mode {
+  --bg: #fff8e1;
+  --bg-elevated: #fff3c4;
+  --fg: #1a1a1a;
+  --border: #e6c98a;
+  letter-spacing: 0.015em;
+  line-height: 1.75;
+}
+
+.adhd-mode.dark {
+  --bg: #0e1a12;
+  --bg-elevated: #17241a;
+  --fg: #fff8e1;
+  --fg-muted: #e6c98a;
+}
+
+* { transition: background-color 120ms ease, color 120ms ease, border-color 120ms ease; }
+
+a { color: inherit; }
+a:hover { color: var(--accent); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
